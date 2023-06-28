@@ -8,6 +8,7 @@ import { getNotes } from '../redux/action/notes';
 
 import Card from '../Components/Card';
 import Fab from '../Components/Fab';
+import axios from 'axios';
 
 
 class HomeScreen extends Component {
@@ -24,7 +25,8 @@ class HomeScreen extends Component {
     this.setState({ _ModalVisible: bool });
   }
   fetchData = () => {
-    // this.props.dispatch(getNotes());
+    this.props.dispatch(getNotes());
+    axios.get('http://localhost:3001/api/notes')
     console.log("data fetching");
   }
 
@@ -37,7 +39,7 @@ class HomeScreen extends Component {
     // })
   }
   _onRefresh = () => {
-    // this.props.dispatch(getNotes());
+    this.props.dispatch(getNotes());
   }
   _keyExtractor = (item, index) => item.id;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Text, Alert, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, Alert, StyleSheet, View } from 'react-native';
 
 
 import { connect } from 'react-redux';
@@ -34,7 +34,7 @@ class Card extends Component {
             <TouchableOpacity
                 onPress={() => { this.props.navigation.navigate('EditNote', this.props.data) }}
                 onLongPress={() => { this.deleteHandler(this.props.data) }}
-                style={[styles.card, '#66CCCC']}>
+                style={styles.card}>
 
                 <Text numberOfLines={1} style={styles.title}>{this.props.data.title}</Text>
                 <Text numberOfLines={4} style={styles.note}>{this.props.data.content}</Text>
@@ -64,13 +64,13 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
-
+        backgroundColor: '#66CCCC',
         elevation: 10,
         shadowRadius: 5,
         shadowOpacity: 1.0,
         borderRadius: 5,
         margin: 20,
-        paddingRight: 20,
+        padding: 20,
         width: 138,
         height: 136,
         color: '#fff',

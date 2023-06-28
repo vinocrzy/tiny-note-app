@@ -26,7 +26,7 @@ const notes = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: action.payload.data.value
+                data: action.payload.data
             }
 
 
@@ -46,7 +46,7 @@ const notes = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                data: [...action.payload.data.value, ...state.data]
+                data: [...action.payload.data, ...state.data]
             };
 
 
@@ -63,9 +63,9 @@ const notes = (state = initialState, action) => {
             };
         case 'UPDATE_NOTES_FULFILLED':
             for (let i = 0; i < tempData.data.length; i++) {
-                if (tempData.data[i].id == action.payload.data.value[0].id) {
-                    tempData.data[i].title = action.payload.data.value[0].title;
-                    tempData.data[i].note = action.payload.data.value[0].note;
+                if (tempData.data[i].id == action.payload.data.id) {
+                    tempData.data[i].title = action.payload.data.title;
+                    tempData.data[i].note = action.payload.data.note;
                 }
             }
             return {
