@@ -21,7 +21,7 @@ export const insertNotes = (data) => {
 export const updateNotes = (data) => {
     return {
         type: 'UPDATE_NOTES',
-        payload: axios.patch(`${IP}/notes/${data.id}`, data)
+        payload: axios.put(`${IP}/notes/${data.id}`, data)
     }
 }
 

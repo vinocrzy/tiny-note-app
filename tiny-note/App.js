@@ -8,6 +8,7 @@ import HomeScreen from './src/Screens/HomeScreen';
 import { StyleSheet, Text, View } from 'react-native';
 import HeaderNavigation from './src/Components/HeaderNavigation';
 import AddNote from './src/Screens/AddNote';
+import EditNote from './src/Screens/EditNote';
 
 
 const AppNavigator = createStackNavigator({
@@ -23,7 +24,12 @@ const AppNavigator = createStackNavigator({
       header: (<HeaderNavigation navigation={navigation} screen={'AddNote'} />)
     }),
   },
-
+  EditNote: {
+    screen: EditNote,
+    navigationOptions: ({ navigation }) => ({
+      header: (<HeaderNavigation navigation={navigation} screen={'EditNote'} />)
+    }),
+  },
 });
 
 
