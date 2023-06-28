@@ -46,7 +46,7 @@ const notes = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                data: [...action.payload.data, ...state.data]
+                data: [...[action.payload.data], ...state.data]
             };
 
 

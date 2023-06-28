@@ -4,11 +4,10 @@ import { createAppContainer } from "react-navigation";
 import { Provider } from 'react-redux'
 import store from './src/redux/store';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createDrawerNavigator } from 'react-navigation-drawer';
 import HomeScreen from './src/Screens/HomeScreen';
 import { StyleSheet, Text, View } from 'react-native';
-import DrawerNavigation from './src/Components/DrawerNavigation';
 import HeaderNavigation from './src/Components/HeaderNavigation';
+import AddNote from './src/Screens/AddNote';
 
 
 const AppNavigator = createStackNavigator({
@@ -18,23 +17,19 @@ const AppNavigator = createStackNavigator({
       header: (<HeaderNavigation navigation={navigation} screen={'Home'} />)
     }),
   },
+  AddNote: {
+    screen: AddNote,
+    navigationOptions: ({ navigation }) => ({
+      header: (<HeaderNavigation navigation={navigation} screen={'AddNote'} />)
+    }),
+  },
 
 });
 
-const MyDrawer = createDrawerNavigator(
-  {
-    Home: {
-      screen: AppNavigator,
-    }
-  },
-  {
-    contentComponent: DrawerNavigation,
-    drawerWidth: 235
-  }
-);
 
 
-const AppContainer = createAppContainer(MyDrawer);
+
+const AppContainer = createAppContainer(AppNavigator);
 
 
 export default function App() {
