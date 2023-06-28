@@ -14,21 +14,15 @@ import EditNote from './src/Screens/EditNote';
 const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
-    navigationOptions: ({ navigation }) => ({
-      header: (<HeaderNavigation navigation={navigation} screen={'Home'} />)
-    }),
+    header: (<HeaderNavigation screen={'Home'} />),
   },
   AddNote: {
     screen: AddNote,
-    navigationOptions: ({ navigation }) => ({
-      header: (<HeaderNavigation navigation={navigation} screen={'AddNote'} />)
-    }),
+    header: (<HeaderNavigation screen={'Add Note'} />),
   },
   EditNote: {
     screen: EditNote,
-    navigationOptions: ({ navigation }) => ({
-      header: (<HeaderNavigation navigation={navigation} screen={'EditNote'} />)
-    }),
+    header: (<HeaderNavigation screen={'Edit Note'} />),
   },
 });
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const IP = 'http://localhost:3001/api';
+const IP = 'http://192.168.1.101:3001/api';
 
 
 export const getNotes = () => {

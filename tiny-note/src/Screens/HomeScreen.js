@@ -67,7 +67,7 @@ class HomeScreen extends Component {
                 />
               )
         }
-        <Fab navigation={this.props.navigation} />
+        <Fab onClick={() => this.props.navigation.navigate('AddNote')} />
 
       </View>
     );

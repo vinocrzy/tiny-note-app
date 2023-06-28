@@ -4,6 +4,7 @@ import { View, TextInput, Text, Picker, StyleSheet, TouchableOpacity } from 'rea
 import { connect } from 'react-redux';
 
 import { updateNotes } from '../redux/action/notes';
+import Fab from '../Components/Fab';
 
 class AddNote extends Component {
 
@@ -42,16 +43,19 @@ class AddNote extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput placeholder="ADD TITLE..."
-          onChangeText={(text) => this.setState({ title: text })}
-          value={this.state.title}
-        />
-        <TextInput underlineColorAndroid="transparent"
-          placeholder="ADD NOTES..."
-          onChangeText={(text) => this.setState({ content: text })}
-          value={this.state.content}
-          multiline={true} />
+        <View style={styles.noteHolder}>
+          <TextInput placeholder="ADD TITLE..."
+            onChangeText={(text) => this.setState({ title: text })}
+            value={this.state.title}
+          />
+          <TextInput underlineColorAndroid="transparent"
+            placeholder="ADD NOTES..."
+            onChangeText={(text) => this.setState({ content: text })}
+            value={this.state.content}
+            multiline={true} />
+        </View>
 
+        <Fab onClick={() => this.updateNote()} varient={true} />
       </View>
     );
   }
@@ -70,5 +74,9 @@ export default connect(mapStateToProps)(AddNote)
 const styles = StyleSheet.create({
   container: {
     padding: 10
+  },
+  noteHolder: {
+    marginTop: 2,
+    paddingBottom: 100
   },
 });
