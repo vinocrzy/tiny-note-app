@@ -36,10 +36,8 @@ class Card extends Component {
                 onLongPress={() => { this.deleteHandler(this.props.data) }}
                 style={[styles.card, '#66CCCC']}>
 
-
                 <Text numberOfLines={1} style={styles.title}>{this.props.data.title}</Text>
-                <Text numberOfLines={1} style={styles.category}>{this.props.data.category}</Text>
-                <Text numberOfLines={4} style={styles.note}>{this.props.data.note}</Text>
+                <Text numberOfLines={4} style={styles.note}>{this.props.data.content}</Text>
 
             </TouchableOpacity>
         )
